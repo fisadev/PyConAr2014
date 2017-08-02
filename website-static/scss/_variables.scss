@@ -1,0 +1,22 @@
+/* use http://chir.ag/projects/name-that-color/ to name colors the good way */
+$black: #000;
+$white: #fff;
+$mercury: #E6E6E6;
+$alabaster: #f8f8f8;
+$san-marino: #405BA8;
+$cloud-burst: #242E64;
+$putty: #E4D785;
+$port-gore: #2F2348;
+
+$primary-color: $cloud-burst;
+$font-color-dark: $black;
+$font-color-light: $white;
+$hover-font-color: $san-marino;
+
+
+$em-base: 16px;
+
+$neat-grid: (
+  columns: 12,
+  gutter: 25px,
+);

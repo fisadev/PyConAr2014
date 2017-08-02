@@ -1,0 +1,101 @@
+/*
+  px to rem
+  Converts pixels to rem
+
+  @param{pixelvalue}
+
+  @example scss - Usage
+    margin-left: rem(25);
+
+  @example css - CSS Output
+    $dimension: 1.5625rem;
+
+  @return {Number (rem)}
+*/
+@function rem($pxval) {
+  @if not unitless($pxval) {
+    $pxval: strip-units($pxval);
+  }
+
+  $base: $em-base;
+  @if not unitless($base) {
+    $base: strip-units($base);
+  }
+
+  @return ($pxval / $base) * 1rem;
+}
+
+/*
+  px to em
+  Convert pixels to em
+
+  @param{pixelvalue}
+
+  @example scss - Usage // with parent 16px
+    font-size: em(12);
+
+  @example css - CSS Output
+    font-size: 0.750em;
+
+  @return {Number (em)}
+
+  ~ if the parent is another value say 24px write em(12, 24)
+*/
+@function em($pxval, $base: $em-base) {
+  @if not unitless($pxval) {
+    $pxval: strip-units($pxval);
+  }
+  @if not unitless($base) {
+    $base: strip-units($base);
+  }
+
+  @return ($pxval / $base) * 1em;
+}
+
+@charset "UTF-8";
+
+/*
+  Strips the unit from a number.
+  @param {Number (With Unit)} $value
+
+  @example scss - Usage
+    $dimension: strip-units(10em);
+
+  @example css - CSS Output
+    $dimension: 10;
+
+  @return {Number (Unitless)}
+*/
+@function strip-units($value) {
+  @return ($value / ($value * 0 + 1));
+}
+
+@mixin font-smoothing() {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+@mixin css-triangle($orientation, $base: 60px, $height: 30px, $color: #fff) {
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    background: transparent;
+
+    @if $orientation == "top" {
+        border-width: 0 ($base / 2) $height ($base / 2);
+        border-color: transparent transparent $color transparent;
+    }
+    @if $orientation == "bottom" {
+        border-width: $height ($base / 2) 0 ($base / 2);
+        border-color: $color transparent transparent transparent;
+    }
+    @if $orientation == "left" {
+        border-width: ($base / 2) $height ($base / 2) 0;
+        border-color: transparent $color transparent transparent;
+    }
+    @if $orientation == "right" {
+        border-width: ($base / 2) 0 ($base / 2) $height;
+        border-color: transparent transparent transparent $color;
+    }
+}

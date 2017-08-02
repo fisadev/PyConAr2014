@@ -1,0 +1,41 @@
+.section-title {
+  font-size: em(22);
+  color: $black;
+  font-weight: bold;
+  line-height: 1.3;
+  margin-top: rem(15);
+  margin-bottom: rem(25);
+
+  @include breakpoint("medium-landscape") {
+    font-size: em(32);
+  }
+}
+
+
+iframe {
+  width: 100% ;
+}
+
+
+.page__content {
+  @include grid-column(12);
+
+  @include breakpoint("medium-landscape") {
+    @include grid-column(6);
+    @include grid-push(3);
+  }
+
+  p {
+    margin-bottom: rem(25);
+    line-height: 1.5;
+  }
+}
+
+.page__title {
+  font-size: em(18);
+  font-weight: 500;
+  line-height: 1.5;
+  border-bottom: 1px solid $black;
+  margin-top: rem(35);
+  margin-bottom: rem(25);
+}

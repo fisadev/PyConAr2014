@@ -1,0 +1,20 @@
+@mixin breakpoint($size) {
+  @if $size == "mobile" {
+     @media (min-width: 375px) { @content ; }
+  }
+  @else if $size == "medium" {
+     @media (min-width: 768px) { @content ; }
+  }
+  @else if $size == "medium-landscape" {
+     @media (min-width: 1024px) { @content ; }
+  }
+  @else if $size == "large" {
+     @media (min-width: 1280px) { @content ; }
+  }
+  @else if $size == "larger" {
+     @media (min-width: 1440px) { @content ; }
+  }
+  @else if $size == "jumbo" {
+     @media (min-width: 1920px) { @content ; }
+  }
+}

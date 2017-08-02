@@ -1,0 +1,18 @@
+{% load sitetree %}
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        {% sitetree_menu from "main" include "trunk" template "sitetree/menu_bootstrap3.html" %}
+        <p>PyConAr 2017 | Powered by <a href="http://eldarion.com/symposion/" target="_blank">Symposion</a></p>
+      </div>
+      <div class="col-md-4 text-right">
+        <p>Contactate a través de:</p>
+        <a href="https://twitter.com/pyconar" target="_blank"><img src="/site_media/static/images/logo-twitter.svg"></a>
+        <a href="https://www.facebook.com/pyconar2017/" target="_blank"><img src="/site_media/static/images/logo-facebook.svg"></a>
+        <a href="mailto:pyconar@python.org.ar" target="_blank"><img src="/site_media/static/images/logo-email.svg"></a>
+      </div>
+    </div>
+  </div>
+</footer>

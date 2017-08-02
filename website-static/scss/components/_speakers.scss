@@ -1,0 +1,39 @@
+.speakers {
+  background-color: $mercury;
+  height: rem(390);
+  padding-top: rem(60);
+  text-align: center;
+
+  .section-title {
+    color: $black;
+  }
+
+  .cta {
+    @extend %cta;
+    background-color: $cloud-burst;
+    color: $white;
+    display: inline-block;
+    width: rem(180);
+
+    &:hover, &:focus {
+      background-color: $putty;
+    }
+  }
+
+  p {
+    font-size: em(16);
+    color: $black;
+    width: 80%;
+    line-height: 1.4;
+    margin: rem(25) auto rem(20);
+  }
+
+  &__title {
+    font-size: em(20);
+    margin-top: rem(25);
+  }
+
+  .link {
+    color: $san-marino;
+  }
+}

@@ -1,0 +1,38 @@
+.social-media__links {
+  li {
+    display: inline-block;
+    font-size: em(16);
+    font-weight: 600;
+    margin-bottom: rem(15);
+
+    @include breakpoint("medium") {
+      font-size: em(20);
+      margin-left: rem(30);
+    }
+
+    &:first-child {
+      @include breakpoint("medium") {
+        margin-left: 0;
+      }
+    }
+  }
+
+  a {
+    font-weight: normal;
+    cursor: pointer;
+
+    &:focus, &:hover {
+      color: $putty;
+    }
+  }
+
+  small {
+    font-size: em(12);
+  }
+
+  i {
+    font-size: em(18);
+    margin-right: rem(5);
+    vertical-align: middle;
+  }
+}

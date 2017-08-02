@@ -1,0 +1,89 @@
+.header {
+  background-color: $primary-color;
+  height: rem(85);
+  width: 100%;
+  position: relative;
+
+  &--fixed {
+    position: fixed;
+    top: 0;
+    z-index: 2;
+  }
+
+  &__logo {
+    font-size: em(24);
+    width: 100%;
+
+    @include breakpoint("medium-landscape") {
+      width: auto;
+      float: left;
+    }
+
+    span {
+      display: block;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      top: rem(23);
+      width: rem(221);
+      color: $white;
+      font-weight: 800;
+
+      @include breakpoint("medium-landscape") {
+        position: static;
+        transform: none;
+        margin-left: rem(100);
+        margin-top: rem(32);
+        display: block;
+      }
+    }
+
+    img {
+      width: rem(45);
+      display: inline-block;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+
+      @include breakpoint("medium-landscape") {
+        width: rem(68);
+      }
+    }
+  }
+
+  &__nav {
+    width: 100%;
+    text-align: center;
+    margin-top: rem(60);
+
+    @include breakpoint("medium-landscape") {
+      width: auto;
+      float: right;
+      margin-right: rem(25);
+      margin-top: rem(50);
+    }
+
+    li {
+      display: inline-block;
+      @include breakpoint("medium-landscape") {
+        margin-left: rem(15);
+      }
+    }
+
+    a {
+      color: $white;
+      padding: rem(5);
+      font-weight: bold;
+      text-align: center;
+
+      @include breakpoint("medium-landscape") {
+        font-size: em(25);
+      }
+
+      &:hover, &:focus, &.active {
+        color: $putty;
+      }
+
+    }
+  }
+}

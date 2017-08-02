@@ -1,0 +1,3 @@
+#EMAIL_HOST = 'smtp'
+#EMAIL_PORT = 1025
+#DEFAULT_FROM_EMAIL = 'no-reply@python.org.ar'

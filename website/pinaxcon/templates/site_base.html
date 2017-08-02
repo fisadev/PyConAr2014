@@ -1,0 +1,76 @@
+{% extends "theme_bootstrap/base.html" %}
+
+{% load staticfiles %}
+{% load metron_tags %}
+{% load i18n %}
+{% load sitetree %}
+
+{% block styles %}
+    {% include "_styles.html" %}
+    <link rel="shortcut icon" type="image/png" href="/site_media/static/images/favicon.ico"/>
+{% endblock %}
+
+{% block extra_head_base %}
+    {% block extra_head %}
+      <meta property="og:title" content="Pyconar 2017 - 17, 18 y 19 de Noviembre - Córdoba"/>
+      <meta property="og:site_name" content="Pyconar 2017"/>
+      <meta property="og:url" content="http://ar.pycon.org"/>
+      <meta property="og:image" content="http://ar.pycon.org/site_media/static/images/logo-fb.png"/>
+      <meta property="og:description" content="9va Conferencia Argentina de Python, organizada y llevada a cabo por voluntarios de la comunidad Python Argentina (PyAr)"/>
+    {% endblock %}
+{% endblock %}
+
+{% block topbar_base %}
+    <nav class="navbar">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">PyConAr 2017 - Córdoba</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          {% block nav %}
+            {% block account_bar %}{% include "_account_bar.html" %}{% endblock %}
+            {% sitetree_menu from "main" include "trunk" template "sitetree/menu_bootstrap3.html" %}
+          {% endblock %}
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    {% if request.path == '/' %}
+      {% include "_header.html" %}
+
+    {% endif %}
+    {% include "_messages.html" %}
+{% endblock %}
+
+{% block body_base %}
+  <section class="container-fluid">
+    <div class="container">
+      {% block body %}
+      {% endblock %}
+
+    </div>
+  </section>
+{% endblock %}
+
+
+{% block footer_base %}
+    {% include "_footer.html" %}
+{% endblock %}
+
+
+{% block scripts %}
+    {% include "_scripts.html" %}
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ace/1.2.0/ace.js"></script>
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+{% endblock %}
+
+{% block extra_body_base %}
+    {% include "_analytics.html" %}
+    {% block extra_body %}{% endblock %}
+{% endblock %}

@@ -1,0 +1,31 @@
+.hero {
+  height: 31vh;
+  background-size: cover;
+  position: relative;
+
+  @include breakpoint("medium-landscape") {
+    height: 40vh;
+    background-position: center;
+  }
+
+  &__main-title {
+    margin: 0 auto rem(25);
+    font-size: em(40);
+    font-weight: bold;
+    font-family: "Exo";
+    color: $white;
+
+    @include breakpoint("medium-landscape") {
+      font-size: em(60);
+    }
+  }
+
+  &__container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%,-50%,0);
+    width: 90%;
+    text-align: center;
+  }
+}

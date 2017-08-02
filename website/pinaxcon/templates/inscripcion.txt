@@ -1,0 +1,8 @@
+Hola {{ contact_name }},
+
+Gracias por inscribirte a la PyconAR 2016 en Bahía Blanca.
+
+¡Te esperamos!
+
+El equipo Organizador PyconAR 2016
+

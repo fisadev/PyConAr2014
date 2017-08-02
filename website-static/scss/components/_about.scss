@@ -1,0 +1,33 @@
+.about {
+  &__hero {
+    background-image: url('../img/background.jpg');
+    background-color: $primary-color;
+    background-blend-mode: exclusion;
+  }
+
+  &__hero__main-title {
+    color: $white;
+  }
+
+  &__hero__subtitle {
+    font-size: em(16);
+    color: $white;
+
+    @include breakpoint("medium-landscape") {
+      font-size: em(30);
+    }
+  }
+
+  &__links {
+    padding: rem(35) rem(16) rem(20);
+
+    @include breakpoint("medium") {
+      text-align: center;
+    }
+
+    li {
+      color: $black;
+    }
+
+  }
+}

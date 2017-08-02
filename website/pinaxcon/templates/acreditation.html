@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>PyconAr2016</title>
+
+    <!-- Bootstrap -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+
+    <div class="container-fluid">
+
+      <b>Nombre</b>: {{ attendee }}
+      <br>
+      <b>Email:</b> {{ attendee.user.email }}
+      <br> <b>Es vegetariano:</b> {{ attendee.is_vegetarian }}
+      <br> <b>Es celíaco:</b> {{ attendee.is_tacc }}
+      <br> <b>Comida Sábado:</b> {{ attendee.meal_on_saturday }}
+      <br> <b>Comida Domingo:</b> {{ attendee.meal_on_sunday }}
+      <hr>
+
+      {% if attendee.tshirt_male_s %}
+        <b>Remera Hombre S:</b> {{ attendee.tshirt_male_s }}<br />
+      {% endif %}
+
+      {% if attendee.tshirt_male_m %}
+        <b>Remera Hombre M:</b> {{ attendee.tshirt_male_m }}<br />
+      {% endif %}
+
+      {% if attendee.tshirt_male_l %}
+        <b>Remera Hombre L:</b> {{ attendee.tshirt_male_l }}<br />
+      {% endif %}
+
+      {% if attendee.tshirt_male_xl %}
+        <b>Remera Hombre XL:</b> {{ attendee.tshirt_male_xl }}<br />
+      {% endif %}
+
+      {% if attendee.tshirt_male_xxxl %}
+        <b>Remera Hombre XXXL:</b> {{ attendee.tshirt_male_xxxl }}<br />
+      {% endif %}
+
+      {% if attendee.tshirt_male_xxxxl %}
+        <b>Remera Hombre XXXXL:</b> {{ attendee.tshirt_male_xxxxl }}<br />
+      {% endif %}
+
+      {% if attendee.tshirt_female_s %}
+        <b>Remera Mujer S:</b> {{ attendee.tshirt_female_s }}<br />
+      {% endif %}
+
+      {% if attendee.tshirt_female_m %}
+        <b>Remera Mujer M:</b> {{ attendee.tshirt_female_m }}<br />
+      {% endif %}
+
+      {% if attendee.tshirt_female_l %}
+        <b>Remera Mujer L:</b> {{ attendee.tshirt_female_l }}<br />
+      {% endif %}
+
+      {% if attendee.tshirt_female_xl %}
+        <b>Remera Mujer XL:</b> {{ attendee.tshirt_female_xl }}<br />
+      {% endif %}
+
+      <hr />
+      <b>Tiene que pagar:</b> {{ attendee.amount_to_pay }}
+      <br> <b>Quiere certificado:</b> {{ attendee.require_certificate }}
+      <br> <b>Fiesta:</b> {{ attendee.wanna_party }}
+      <hr />
+      <b>Se acreditó:</b> {{ attendee.is_acredited }}
+      <hr />
+
+      {% if is_speaker %}
+        Es Orador
+        <hr />
+      {% endif %}
+
+      <form method="POST">
+          {% csrf_token %}
+          <input type="hidden" name="id_attendee" value="{{attendee.id}}">
+
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <div class="checkbox">
+                <label>
+                  <input name="require_certificate" type="checkbox" {% if attendee.require_certificate %}checked="checked"{% endif %}> ¿Necesita certificado?
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <div class="checkbox">
+                <label>
+                  <input name="wanna_party" type="checkbox" {% if attendee.wanna_party %}checked="checked"{% endif %}> ¿Fiesta?
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-lg btn-block">Acreditar</button>
+      </form>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </body>
+</html>

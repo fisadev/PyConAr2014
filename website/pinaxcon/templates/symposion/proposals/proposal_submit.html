@@ -1,0 +1,20 @@
+{% extends "symposion/proposals/base.html" %}
+
+{% load pinax_boxes_tags %}
+{% load i18n %}
+
+{% block page_title %}{% trans "Submit A Proposal" %}{% endblock %}
+
+{% block body %}
+    {% box "proposal_submit" %}
+
+    {% if kinds %}
+        <p>Elegí que tipo de propuesta te gustaría enviar:</p>
+
+        {% for kind in kinds %}
+            <a href="{% url "proposal_submit_kind" kind.slug %}" class="btn btn-default">{{ kind }}</a>
+        {% endfor %}
+    {% else %}
+        <p>El envío de propuestas no se encuentra abierto.</p>
+    {% endif %}
+{% endblock %}

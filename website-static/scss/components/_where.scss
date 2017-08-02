@@ -1,0 +1,35 @@
+.where {
+  padding: rem(45) rem(16) rem(20);
+
+  .section-title {
+    color: $primary-color;
+    margin-bottom: rem(25);
+    text-align: center;
+
+    @include breakpoint("medium-landscape") {
+      text-align: left;
+    }
+  }
+
+  p {
+    line-height: 1.3;
+    margin-bottom: rem(20);
+    text-align: center;
+
+    @include breakpoint("medium-landscape") {
+      text-align: left;
+    }
+  }
+
+  &__container {
+    @include breakpoint("medium-landscape") {
+      @include grid-column(6);
+    }
+  }
+
+  iframe {
+    @include breakpoint("medium-landscape") {
+      @include grid-column(6);
+    }
+  }
+}

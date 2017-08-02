@@ -1,0 +1,20 @@
+.footer {
+  background-color: $port-gore;
+  color: $white;
+  text-align: center;
+  padding: rem(35) 0 rem(10);
+
+  p {
+    max-width: 80%;
+    margin: 0 auto rem(20);
+  }
+
+  &__cta {
+    margin-bottom: rem(20);
+    display: inline-block;
+  }
+
+  .social-media__links li {
+    display: block;
+  }
+}

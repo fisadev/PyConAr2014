@@ -1,0 +1,24 @@
+%cta {
+  font-size: em(15);
+  border-radius: rem(40);
+  padding: rem(15);
+  max-width: rem(195);
+  margin: 0 auto;
+  cursor: pointer;
+  transition: all .3s ease-in-out;
+
+  @include breakpoint("larger") {
+    padding: rem(20) rem(15);
+    max-width: rem(211);
+    font-size: em(16);
+  }
+}
+
+.link {
+  color: $white;
+  transition: all .3s ease-in-out;
+
+  &:hover, &:focus {
+    color: $putty;
+  }
+}

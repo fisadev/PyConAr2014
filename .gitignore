@@ -1,0 +1,12 @@
+*.pyc
+node_modules/
+_build/
+pinaxcon/site_media/
+pinaxcon/local_settings.py
+website/static/dist
+website/pinaxcon/site_media/
+website/pyconar-*.tar.gz
+package-lock.json
+.DS_Store
+docker-compose-overrides.yml
+.env

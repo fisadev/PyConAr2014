@@ -1,0 +1,24 @@
+{% extends "symposion/proposals/base.html" %}
+
+{% load bootstrap %}
+{% load pinax_boxes_tags %}
+{% load i18n %}
+
+{% block page_title %}Enviar una propuesta para {{ kind.name }}{% endblock %}
+
+{% block body %}
+
+    <form method="POST" action="" enctype="multipart/form-data" class="form-horizontal">
+        {% csrf_token %}
+        <fieldset>
+            {{ proposal_form|bootstrap_horizontal }}
+        </fieldset>
+        <div class="form-actions">
+            <p> Serás capaz de editar tu propuesta luego de que haya sido enviada. El comite de revsión, podrá hacer preguntas, proveer feedback y también sugerir cambios a tu propuesta como parte del proceso de revisión
+            </p>
+            <input class="btn btn-primary" type="submit" name="finish" value="Guardar" />
+            <!-- <span style="float: right; padding: 4px 6px">or</span> -->
+            <input class="btn btn-default" type="submit" name="add-speakers" value="Guardar y agregar oradores adicionales." />
+        </div>
+    </form>
+{% endblock %}

@@ -1,0 +1,119 @@
+body {
+  background: red; }
+
+body {
+  font-family: Exo;
+  font-weight: lighter;
+  padding: 0;
+  margin: 0; }
+
+h1, h2, h3 {
+  font-family: Exo;
+  font-weight: bold; }
+
+.container-fluid {
+  padding: 0; }
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start; }
+
+.flex-row.flex-fill {
+  height: 100vh; }
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+  flex-flow: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center; }
+
+.flex-col.flex-fill {
+  width: 100%; }
+
+.flex-right {
+  margin-left: auto; }
+
+.left {
+  width: 50%;
+  height: 100%;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+.right {
+  background-color: #405BA8;
+  height: 100%;
+  width: 50%;
+  flex-grow: 1;
+  padding-bottom: 30px;
+  position: relative;
+  overflow: hidden; }
+
+.right::after {
+  content: "";
+  background: url("../img/background.jpg") no-repeat center center;
+  opacity: 0.35;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: 1; }
+
+.inner-content ul {
+  list-style-position: outside; }
+
+.inner-content div {
+  position: relative;
+  z-index: 9999; }
+
+.inner-content {
+  opacity: 1;
+  width: 80%;
+  text-align: left;
+  color: #DDD; }
+
+.inner-content h1 {
+  color: #DDD; }
+
+.inner-content h2 {
+  color: #DDD; }
+
+.inner-content a {
+  color: white;
+  text-decoration: none; }
+
+.margin-top {
+  margin-top: 4em; }
+
+.call-to-action {
+  text-align: center; }
+
+.call-to-action .button {
+  background-color: #405BA8;
+  border: 0.1rem solid #fff;
+  border-radius: .4rem;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1.6rem;
+  font-weight: 700;
+  height: 6rem;
+  letter-spacing: .1rem;
+  line-height: 6rem;
+  padding: 0 5rem;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap; }
+
+.footer {
+  background: #405BA8;
+  text-align: center;
+  padding: 2em;
+  color: #fff;
+  margin: 1px; }

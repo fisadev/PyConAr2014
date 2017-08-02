@@ -1,0 +1,85 @@
+{% extends "site_base.html" %}
+
+{% load i18n %}
+{% load pinax_boxes_tags %}
+{% load static %}
+{% block head_title %}Bienvenid@os a Pyconar2017{% endblock %}
+
+{% block body_class %}home{% endblock %}
+
+{% block body_base %}
+
+  <section class="container-fluid secondary block">
+    <div class="container">
+      <h3>Ciudad Universitaria</h3>
+      <div class="row top-buffer">
+        <div class="col-md-4">
+          <p>La conferencia se desarrollara en las Baterias D de la Ciudad Universitaria.
+            Habra stands, talleres, múltiples tracks de charlas, espacios de networking y sprints.</p>
+        </div>
+        <div class="col-md-8">
+          <div class="embed-responsive embed-responsive-4by3">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13616.619364968756!2d-64.1864303!3d-31.4374039!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xd031575c5261e9e1!2sModulo+Baterias+%22D%22+-+Honorable+Consejo+Superior%2C+C%C3%B3rdoba%2C+Argentina!5e0!3m2!1ses-419!2sar!4v1499226402085"
+              width="400" height="300" frameborder="0" class="embed-responsive-item" style="border:0" allowfullscreen></iframe>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+  </section>
+
+  <section class="container-fluid secondary block sponsors">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          {% box "sponsors" %}
+          &nbsp;
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- section class="container-fluid primary block">
+    <div class="container">
+      <h2>Seguimos buscando Sponsors</h2>
+      <p>¡Si querés apoyar la pyconar no dudes en escribirnos!</p>
+      <div class="center"><a href="mailto:sponsor-pyconar@python.org.ar" class="btn btn-warning">Convertite en Sponsor</a></div>
+    </div>
+  </section -->
+
+{% endblock %}
+
+{% block styles %}
+  {{ block.super }}
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.1/dist/leaflet.css" />
+{% endblock %}
+
+{% block scripts %}
+    {{ block.super }}
+    <script src="https://unpkg.com/leaflet@1.0.1/dist/leaflet.js" defer></script>
+    <script src="https://flickrembed.com/embed_v2.js.php?source=flickr&layout=responsive&input=72157677377824525&sort=0&by=album&theme=default&scale=fit&skin=default&id=584867a46d8e3"></script>
+    <script>
+    function initMaps() {
+      var LatLngPalihue = {lat: -38.694053, lng: -62.249016};
+
+      function makeTileLayer() {
+        return L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          attribution: '&copy; <a href="http://openstreetmap.org/copyright">Colaboradores de OpenStreetMap</a>',
+          maxZoom: 19
+        });
+      }
+
+      var mapFundadores = L.map('map-fundadores').setView(LatLngFundadores, 18);
+      makeTileLayer().addTo(mapFundadores);
+
+      var marker = L.marker(LatLngPalihue).addTo(mapPalihue);
+      marker.bindPopup('UNS Campus Palihue');
+
+    }
+
+    $(document).ready(initMaps);
+    </script>
+{% endblock %}

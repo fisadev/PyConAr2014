@@ -1,0 +1,29 @@
+version : '2'
+services:
+  postgres:
+    image: postgres:9.5
+    volumes:
+      - ./data/postgres:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER:'pyconar'
+      - POSTGRES_PASSWORD:'pyconar'
+      - POSTGRES_DB=pyconar
+    ports:
+      - "5432:5432"
+  backend:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/usr/src/app
+    ports:
+      - "8000:8000"
+    links:
+      - postgres
+      - smtp
+    restart: unless-stopped
+    environment:
+      - DATABASE_URL=psql://pyconar:pyconar@postgres:5432/pyconar
+  smtp:
+    image: namshi/smtp
+    ports:
+      - "587:587"
